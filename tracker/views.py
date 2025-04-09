@@ -79,3 +79,15 @@ def eliminar_habito(request, hábito_id):
 
     # Redirigir a la lista de hábitos
     return redirect('listar_habitos')
+
+
+# Vista para mostrar el progreso de los hábitos
+@login_required
+def progreso(request):
+    # Aquí puedes agregar la lógica que quieras para mostrar el progreso de los hábitos
+    return render(request, 'tracker/progreso.html')
+
+
+# Vista para la página principal (raíz)
+def home(request):
+    return render(request, 'tracker/home.html')  # O cualquier otra plantilla que desees

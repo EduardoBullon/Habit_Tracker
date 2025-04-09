@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Solo se declara el bloque 'title' una vez en el <head> -->
+    <title>{% block title %}Habit Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            <h2>Habit Tracker</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="{% url 'listar_habitos' %}">Mis Hábitos</a></li>
+                <li><a href="{% url 'agregar_habito' %}">Agregar Hábito</a></li>
+                <li><a href="{% url 'progress' %}">Progreso</a></li>
+                <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenedor principal -->
+    <main class="main-content">
+        <!-- Barra superior -->
+        <header class="header">
+            <div class="header-left">
+                <!-- El bloque 'title' no debe ir aquí -->
+                <h1>Bienvenido a Habit Tracker</h1>
+            </div>
+            <div class="header-right">
+                <span>Bienvenido, {{ user.username }}</span>
+            </div>
+        </header>
+
+        <!-- Contenido específico de cada página -->
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+</html>

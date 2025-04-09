@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+    <h2>Bienvenido a Habit Tracker</h2>
+    <p>¡Aquí puedes gestionar y seguir tus hábitos!</p>
+    <a href="{% url 'listar_habitos' %}">Ver mis hábitos</a>
+{% endblock %}
