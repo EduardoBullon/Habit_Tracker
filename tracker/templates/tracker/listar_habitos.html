@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Hábitos</title>
+</head>
+<body>
+    <h1>Mis Hábitos</h1>
+    <ul>
+        {% for hábito in hábitos %}
+            <li>
+                <strong>{{ hábito.nombre }}</strong><br>
+                {{ hábito.descripcion }}<br>
+                <a href="{% url 'registrar_habito' hábito.id %}">Registrar Progreso</a> |
+                <a href="{% url 'editar_habito' hábito.id %}">Editar</a> |
+                <a href="{% url 'eliminar_habito' hábito.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'agregar_habito' %}">Agregar un nuevo hábito</a>
+</body>
+</html>

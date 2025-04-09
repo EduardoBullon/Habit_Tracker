@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Hábito</title>
+</head>
+<body>
+    <h1>Agregar un Hábito</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nombre">Nombre del Hábito:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre del Hábito" required><br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion" placeholder="Descripción del Hábito" required></textarea><br><br>
+
+        <label for="frecuencia">Frecuencia:</label>
+        <select name="frecuencia" id="frecuencia">
+            <option value="diario">Diario</option>
+            <option value="semanal">Semanal</option>
+        </select><br><br>
+
+        <button type="submit">Agregar Hábito</button>
+    </form>
+    <br>
+    <a href="{% url 'listar_habitos' %}">Volver a la lista de hábitos</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Hábito</title>
+</head>
+<body>
+    <h1>Editar Hábito: {{ hábito.nombre }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nombre">Nombre del Hábito:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ hábito.nombre }}" required><br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion" required>{{ hábito.descripcion }}</textarea><br><br>
+
+        <label for="frecuencia">Frecuencia:</label>
+        <select name="frecuencia" id="frecuencia">
+            <option value="diario" {% if hábito.frecuencia == 'diario' %}selected{% endif %}>Diario</option>
+            <option value="semanal" {% if hábito.frecuencia == 'semanal' %}selected{% endif %}>Semanal</option>
+        </select><br><br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="{% url 'listar_habitos' %}">Volver a la lista de hábitos</a>
+</body>
+</html>
