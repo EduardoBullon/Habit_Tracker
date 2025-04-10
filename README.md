@@ -6,7 +6,6 @@ Este es un proyecto de Django llamado **Habit Tracker**, diseñado para ayudarte
 
 - Python 3.x
 - Django 3.x o superior
-- Base de datos configurada (por ejemplo, SQLite, PostgreSQL, etc.)
 
 ## Instalación
 
