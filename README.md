@@ -19,4 +19,4 @@ Sigue estos pasos para instalar y ejecutar el proyecto:
 
 
 ##Usuario: admin
-##Contraseña: Tecsup
+##Contraseña: tecsup
