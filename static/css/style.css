@@ -1,79 +1,108 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f4f4f4;
 }
 
-header {
+/* Barra lateral */
+.sidebar {
     background-color: #333;
     color: white;
-    padding: 15px 20px;
+    width: 220px;  /* Reducir el ancho de la barra lateral */
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
-header h1 {
+.sidebar .logo {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 20px;
-    color: white;
+.sidebar-nav li {
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-.sidebar a {
+.sidebar-nav a {
     color: white;
     text-decoration: none;
-    padding: 12px;
     display: block;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.sidebar a:hover {
+.sidebar-nav a:hover {
     background-color: #575757;
 }
 
+/* Estilo para el contenido principal */
 .main-content {
-    margin-left: 260px;
+    margin-left: 220px; /* Asegurarse de que el contenido no se solape con la barra lateral */
     padding: 20px;
+    box-sizing: border-box;
 }
 
-.habit-list {
-    list-style-type: none;
-    padding: 0;
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
 }
 
-.habit-item {
-    background-color: white;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.header h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
-.habit-actions a {
-    margin-right: 10px;
-    color: #1e90ff;
+.header-right {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.content a {
+    color: #0066cc;
     text-decoration: none;
 }
 
-.habit-actions a:hover {
+.content a:hover {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;  /* Barra lateral ocupará el 100% en pantallas pequeñas */
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
 }

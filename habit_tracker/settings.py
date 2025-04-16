@@ -125,3 +125,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/listar_habitos/'  
 
+STATIC_URL = '/static/'
+
+# Solo para desarrollo, si no has configurado el servidor de producción aún
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
