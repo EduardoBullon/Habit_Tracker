@@ -131,3 +131,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+LOGOUT_REDIRECT_URL = '/admin/'  # O la URL de tu página de inicio de sesión

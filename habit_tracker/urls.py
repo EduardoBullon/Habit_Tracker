@@ -5,6 +5,6 @@ from tracker import views  # Asegúrate de importar el archivo views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # Página principal
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Rutas de login/logout
     path('mis-habitos/', include('tracker.urls')),  # Aquí no se debe duplicar la ruta ''
 ]
